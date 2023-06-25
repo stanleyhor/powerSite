@@ -39,14 +39,6 @@ const Product = props => {
       width: 50
     }
   }
-
-  const nonClickable = _ => {
-
-  }
-
-  // const handleCountInput = ({product, count}) => {
-  //   addSelectedProducts({product, count})
-  // }
   
   return (
     <div style={styles.productContainer}>
