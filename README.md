@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# Tesla Power Site
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a sample project for Tesla interview
 
-## Available Scripts
+## Prerequisite
+- Install node (version 18 or above), npm or yarn
+- You will need `serve` to serve (run) the app. You may install `serve` with this command: `yarn global add serve` or `npm install -g serve`
 
-In the project directory, you can run:
+## Running the app
+If this is the first time you run the app, please run this command first (only needed for the first time):
+`npm install` or `yarn`
 
-### `npm start`
+To start the app (use for development), please run this command:
+`yarn start` or `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Build and run the final build
+To serve/run the app (as a final product), you will need to build the app, and then serve(run) the app
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To build the app, please run this command:
+`yarn build` or `npm run build`
 
-### `npm test`
+Finally, serve (run) the app with this command:
+`serve -s build -l 8000`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Shortcut
+There is a script to build and run the app. Try this command:
+`./run.sh`
 
-### `npm run build`
+## Explore the app
+To explore the app, open a browser and browse [http://localhost:8000](`http://localhost:8000`)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Note
+- This is only the UI app, an API server/service will be needed for a complete project
+- All the backend services are simulated, no backend API is included in this app.
+- I didn't use TypeScript. Need to brush up on my TypeScript. :)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Assumptions
+- Node version 18 or above is installed
+- `yarn` or `npm` has been installed
+- The app will be served on port 8000
+- Most customers using desktop computer
