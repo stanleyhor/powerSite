@@ -1,5 +1,6 @@
 const maxAllowedWidth = 100;
 const transformerPerStorage = 4;
+const numberOfItemsToSwitchLayout = 100;
 
 const products = [
   {
@@ -61,5 +62,6 @@ const products = [
 export {
   maxAllowedWidth,
   transformerPerStorage,
+  numberOfItemsToSwitchLayout,
   products
 }

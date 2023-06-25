@@ -1,16 +1,18 @@
-// import React from 'react';
+import { useState, useEffect } from 'react';
 import Grid from '@mui/material/Grid';
+
+import Box from './Box';
+import { numberOfItemsToSwitchLayout } from '../util/constants';
 
 const PowerLayout = props => {
   const { selectedProducts } = props;
 
-  // const [ selectedProducts, setProducts ] = useState([]);
+  const [ multiplier, setMultiplier ] = useState(1);
 
-  // useEffect(() => {
-  //   if (Array.isArray(selectedProducts) && selectedProducts.length > 0) {
-  //     setProducts(selectedProducts);
-  //   }
-  // }, [selectedProducts]);
+  useEffect(() => {
+    const multip = selectedProducts.length > numberOfItemsToSwitchLayout ? 0.5 : 1;
+    setMultiplier(multip);
+  }, [selectedProducts]);
   
   const styles ={
     layoutContainer: {
@@ -20,31 +22,7 @@ const PowerLayout = props => {
     },
     title: {
       marginBottom: 20
-    },
-    devices: {
-      height: 80, 
-      marginBottom: 10,
-      width: '90%',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      boxShadow: '5px 5px 5px lightgray',
-      borderRadius: 10
-    },
-    deviceImage: {
-      width: 60
     }
-  }
-
-  const Box = props => {
-    const { product } = props;
-    return (
-      <div 
-        style={{...styles.devices, border: `1px solid ${product.color}`}}
-      >
-        <img style={styles.deviceImage} src={product.image} alt={product.name} />
-      </div>
-    )
   }
 
   return (
@@ -58,7 +36,7 @@ const PowerLayout = props => {
       }
       
       <Grid item xs={12}>
-          <Grid container>
+        <Grid container>
           {
             Array.isArray(selectedProducts) && selectedProducts.map((product, i) => {
               return (
@@ -68,11 +46,15 @@ const PowerLayout = props => {
                   style={{}}
                   key={i}
                 >
-                  <Box product={product} />
+                  <Box 
+                    product={product} 
+                    multiplier={multiplier}
+                  />
                 </Grid>
               )
             })
           }
+          <Grid item xs={12} style={{height: 100}}></Grid>
         </Grid>
       </Grid>
     </Grid>

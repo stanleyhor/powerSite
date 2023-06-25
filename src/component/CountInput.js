@@ -4,7 +4,7 @@ const CountInput = props => {
   const styles = {
     input: {
       height: 50,
-      width: 40,
+      width: 60,
       textAlign: 'right',
       borderTop: 'none',
       borderLeft: 'none',

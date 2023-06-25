@@ -4,8 +4,8 @@ import Grid from '@mui/material/Grid';
 import Product from './component/Product';
 import Result from './component/Result';
 import PowerLayout from './component/PowerLayout';
-// import Debug from './component/Debug';
 import { updateWithTransformer, updateSelectedProducts } from './util/util.js';
+import { numberOfItemsToSwitchLayout } from './util/constants';
 
 const Tesla = props => {
   const [ selectedProducts, setSelectedProducts ] = useState([]);
@@ -51,7 +51,7 @@ const Tesla = props => {
               addSelectedProducts={addSelectedProducts} 
             />
           </Grid>
-          <Grid item xs={8}>
+          <Grid item xs={selectedProducts.length < numberOfItemsToSwitchLayout ? 8 : 4}>
             <PowerLayout 
               selectedProducts={selectedProducts}
             />

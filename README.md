@@ -34,7 +34,9 @@ To explore the app, open a browser and browse [http://localhost:8000](`http://lo
 - All the backend services are simulated, no backend API is included in this app.
 - I didn't use TypeScript. Need to brush up on my TypeScript. :)
 - Checkout the master branch for the final version.
-- Try a different version of the app by checking out the "click-to-select" branch.
+- Special feature/s: 
+  - If the number of items is more than 100, the layout of the power pack will be display with small icons, so that more power packs will be shown on the screen (this will reduce the scroll on the layout section)
+  - Try a different version of the app by checking out the "click-to-select" branch.
 
 
 ## Assumptions
