@@ -4,19 +4,18 @@ import Grid from '@mui/material/Grid';
 const PowerLayout = props => {
   const { selectedProducts } = props;
 
-  const [ products, setProducts ] = useState([]);
+  // const [ selectedProducts, setProducts ] = useState([]);
 
-  useEffect(() => {
-    if (Array.isArray(selectedProducts) && selectedProducts.length > 0) {
-      setProducts(selectedProducts);
-    }
-  }, [selectedProducts]);
+  // useEffect(() => {
+  //   if (Array.isArray(selectedProducts) && selectedProducts.length > 0) {
+  //     setProducts(selectedProducts);
+  //   }
+  // }, [selectedProducts]);
   
   const styles ={
     layoutContainer: {
       paddingLeft: 20,
       paddingRight: 20,
-      // width: '100%',
       justifyContent: 'flex-start'
     },
     title: {
@@ -51,7 +50,7 @@ const PowerLayout = props => {
   return (
     <Grid container style={styles.layoutContainer}>
       {
-        Array.isArray(products) && products.length > 0 && (
+        Array.isArray(selectedProducts) && selectedProducts.length > 0 && (
           <Grid item xs={12} style={styles.title}>
             Potential Layout
           </Grid>
@@ -61,7 +60,7 @@ const PowerLayout = props => {
       <Grid item xs={12}>
           <Grid container>
           {
-            Array.isArray(products) && products.map((product, i) => {
+            Array.isArray(selectedProducts) && selectedProducts.map((product, i) => {
               return (
                 <Grid 
                   item 

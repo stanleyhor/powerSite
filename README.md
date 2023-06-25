@@ -33,6 +33,8 @@ To explore the app, open a browser and browse [http://localhost:8000](`http://lo
 - This is only the UI app, an API server/service will be needed for a complete project
 - All the backend services are simulated, no backend API is included in this app.
 - I didn't use TypeScript. Need to brush up on my TypeScript. :)
+- Checkout the master branch for the final version.
+- Try a different version of the app by checking out the "click-to-select" branch.
 
 
 ## Assumptions
