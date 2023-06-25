@@ -54,12 +54,12 @@ const calculateDimension = products => {
 
       if ((thisWidth + width) > maxAllowedWidth) {
         length += thisLength;
-        maxWidth = (thisWidth + width) > maxAllowedWidth ? maxWidth : (thisWidth + width);
         width = 0;
         row++;
       } else {
-        if (row === 1) {
-          maxWidth = (thisWidth + width) > maxAllowedWidth ? maxWidth : (thisWidth + width);
+        let addedWidth = thisWidth + width;
+        if (addedWidth > maxWidth) {
+          maxWidth = addedWidth;
         }
       }
       width += thisWidth;

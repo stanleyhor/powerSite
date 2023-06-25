@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid';
 import Product from './component/Product';
 import Result from './component/Result';
 import PowerLayout from './component/PowerLayout';
-import Debug from './component/Debug';
+// import Debug from './component/Debug';
 import { updateWithTransformer, updateSelectedProducts } from './util/util.js';
 
 const Tesla = props => {
@@ -53,11 +53,6 @@ const Tesla = props => {
           </Grid>
           <Grid item xs={8}>
             <PowerLayout 
-              selectedProducts={selectedProducts}
-            />
-
-
-            <Debug 
               selectedProducts={selectedProducts}
             />
           </Grid>
