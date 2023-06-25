@@ -55,7 +55,7 @@ const calculateDimension = products => {
       if ((thisWidth + width) > maxAllowedWidth) {
         length += thisLength;
         width = 0;
-        row++;
+        row = row + 1;
       } else {
         let addedWidth = thisWidth + width;
         if (addedWidth > maxWidth) {
@@ -77,23 +77,42 @@ const calculateDimension = products => {
  * @returns 
  */
 const updateWithTransformer = products => {
-  let updatedProducts = [];
   if (Array.isArray(products) && products.length > 0) {
-    updatedProducts = products.filter(product => product.type !== 'transformer');
-    const powerCount = updatedProducts.length;
+    let updatedProducts = [];
 
-    let add = 0;
-    if (powerCount !== 4) {
-      add = (powerCount % transformerPerStorage) > 0 ? 1 : 0;
-    }
-    
-    const transformerCount = Math.floor(updatedProducts.length / transformerPerStorage) + add;
+    let storageOnly = products.filter(product => product.type !== 'transformer');
 
-    for (let i=0; i<transformerCount; i++) {
-      updatedProducts.push(getTransformer());
-    }
+    storageOnly.forEach((product, i) => {
+      if (i>0 &&(i % transformerPerStorage === 0)) {
+        updatedProducts.push(getTransformer());
+      }
+      updatedProducts.push(product);
+    });
+
+    updatedProducts.push(getTransformer());
+
+    return updatedProducts;
   }
-  return updatedProducts;
+
+
+
+  // let updatedProducts = [];
+  // if (Array.isArray(products) && products.length > 0) {
+  //   updatedProducts = products.filter(product => product.type !== 'transformer');
+  //   const powerCount = updatedProducts.length;
+
+  //   let add = 0;
+  //   if (powerCount !== 4) {
+  //     add = (powerCount % transformerPerStorage) > 0 ? 1 : 0;
+  //   }
+    
+  //   const transformerCount = Math.floor(updatedProducts.length / transformerPerStorage) + add;
+
+  //   for (let i=0; i<transformerCount; i++) {
+  //     updatedProducts.push(getTransformer());
+  //   }
+  // }
+  // return updatedProducts;
 }
 
 const removeTransformers = products => {
