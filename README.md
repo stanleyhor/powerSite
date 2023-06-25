@@ -1,6 +1,6 @@
 # Tesla Power Site
 
-This is a sample project for Tesla interview
+This is a sample Tesla Power Site project.
 
 ## Prerequisite
 - Install node (version 18 or above), npm or yarn
