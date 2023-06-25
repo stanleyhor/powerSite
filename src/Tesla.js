@@ -5,7 +5,7 @@ import Product from './component/Product';
 import Result from './component/Result';
 import PowerLayout from './component/PowerLayout';
 import Debug from './component/Debug';
-import { updateWithTransformer } from './util/util.js';
+import { updateWithTransformer, removeProduct } from './util/util.js';
 
 const Tesla = props => {
   const [ selectedProducts, setSelectedProducts ] = useState([]);
@@ -20,9 +20,7 @@ const Tesla = props => {
       bottom: 0, 
       left: 0, 
       width: '100%', 
-      backgroundColor: 'white', 
-      // opacity: 0.8
-      // borderTop: '1px gray solid'
+      backgroundColor: 'white'
     },
     logo: {
       width: 120
@@ -37,6 +35,12 @@ const Tesla = props => {
     currentProducts.push(product);
 
     let products = updateWithTransformer(currentProducts);
+    setSelectedProducts(products);
+  }
+
+  const removeSelectedProduct = product => {
+    let products = removeProduct({ selectedProducts, product });
+    products = updateWithTransformer(products);
     setSelectedProducts(products);
   }
 
@@ -57,6 +61,7 @@ const Tesla = props => {
           <Grid item xs={8}>
             <PowerLayout 
               selectedProducts={selectedProducts}
+              removeSelectedProduct={removeSelectedProduct}
             />
           </Grid>
         </Grid>

@@ -77,24 +77,23 @@ const calculateDimension = products => {
  * @returns 
  */
 const updateWithTransformer = products => {
+  let updatedProducts = [];
   if (Array.isArray(products) && products.length > 0) {
-    const storage = products.filter(product => product.type === 'storage').length;
-    const transformer = products.filter(product => product.type === 'transformer').length;
+    updatedProducts = products.filter(product => product.type !== 'transformer');
+    const powerCount = updatedProducts.length;
 
     let add = 0;
-    if (storage !== 4) {
-      add = (storage % transformerPerStorage) > 0 ? 1 : 0;
+    if (powerCount !== 4) {
+      add = (powerCount % transformerPerStorage) > 0 ? 1 : 0;
     }
     
-    const shouldHaveTransformer = Math.floor(storage / transformerPerStorage) + add;
+    const transformerCount = Math.floor(updatedProducts.length / transformerPerStorage) + add;
 
-    let updateProducts = [...products];
-    if (shouldHaveTransformer > transformer) {
-        updateProducts.push(getTransformer());
+    for (let i=0; i<transformerCount; i++) {
+      updatedProducts.push(getTransformer());
     }
-
-    return updateProducts;
   }
+  return updatedProducts;
 }
 
 const removeTransformers = products => {
@@ -104,6 +103,22 @@ const removeTransformers = products => {
   return products;
 }
 
+const removeProduct = ({ selectedProducts, product }) => {
+  let updatedProducts = [];
+  if (Array.isArray(selectedProducts) && selectedProducts.length > 0) {
+    let found = false;
+    for (let i=0; i<selectedProducts.length; i++) {
+      if (!found && selectedProducts[i].name === product.name) {
+        found = true;
+        continue;
+      }
+      updatedProducts.push(selectedProducts[i]);
+    }
+  }
+
+  return updatedProducts;
+}
+
 export {
   getTransformer,
   calculateTotalEnergy,
@@ -111,5 +126,6 @@ export {
   calculateTotalCost,
   calculateDimension,
   updateWithTransformer,
-  removeTransformers
+  removeTransformers,
+  removeProduct
 }
