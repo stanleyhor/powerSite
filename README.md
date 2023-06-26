@@ -26,7 +26,7 @@ Finally, serve (run) the app with this command:
 To run jest test, please run this command: `npx jest`
 
 ## Shortcuts
-After cloning the project, run `yarn`.
+After cloning the project, switch to the `master` branch, run `yarn`.
 Then, run this command to build and start the app:
 `./run.sh`
 
