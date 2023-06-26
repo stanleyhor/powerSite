@@ -25,8 +25,9 @@ Finally, serve (run) the app with this command:
 ## Run test
 To run jest test, please run this command: `npx jest`
 
-## Shortcut
-There is a script to build and run the app. Try this command:
+## Shortcuts
+After cloning the project, run `yarn`.
+Then, run this command to build and start the app:
 `./run.sh`
 
 ## Explore the app
@@ -37,8 +38,9 @@ To explore the app, open a browser and browse [http://localhost:8000](`http://lo
 - All the backend services are simulated, no backend API is included in this app.
 - I didn't use TypeScript. Need to brush up on my TypeScript. :)
 - Checkout the master branch for the final version.
+- The layout is for demo purposes, for a final product, I understand that there are some improvements needed to make the powerpacks layout more presentable.
 - Special feature/s: 
-  - If the number of items is more than 100, the layout of the power pack will be display with small icons, so that more power packs will be shown on the screen (this will reduce the scroll on the layout section)
+  - If the number of items is more than 100, the layout of the power pack will be display with small icons, so that more powerpacks can be shown on the screen (this will reduce the scroll on the layout section).
   - Try a different version of the app by checking out the "click-to-select" branch.
 
 
