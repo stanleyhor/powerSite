@@ -43,7 +43,7 @@ const Power = props => {
         >
           {totalEnergy}
         </Typography>
-          {`MWh`}
+          {` MWh`}
       </Grid>
 
       <Grid item xs={3} style={{textAlign: 'center'}}>

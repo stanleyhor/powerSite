@@ -1,7 +1,7 @@
 import { products } from './constants';
 
 const getProducts = _ => {
-  // call API to retrieve products
+  // TODO: call API to retrieve products
   return products;
 }
 

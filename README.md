@@ -22,6 +22,9 @@ To build the app, please run this command:
 Finally, serve (run) the app with this command:
 `serve -s build -l 8000`
 
+## Run test
+To run jest test, please run this command: `npx jest`
+
 ## Shortcut
 There is a script to build and run the app. Try this command:
 `./run.sh`

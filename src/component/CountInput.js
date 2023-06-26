@@ -1,3 +1,5 @@
+import React from 'react';
+
 const CountInput = props => {
   const { addSelectedProducts, product, index } = props;
 

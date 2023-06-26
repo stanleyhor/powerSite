@@ -77,9 +77,9 @@ const calculateDimension = products => {
  * @returns 
  */
 const updateWithTransformer = products => {
+  let updatedProducts = [];
+  
   if (Array.isArray(products) && products.length > 0) {
-    let updatedProducts = [];
-
     let storageOnly = products.filter(product => product.type !== 'transformer');
 
     storageOnly.forEach((product, i) => {
@@ -90,9 +90,9 @@ const updateWithTransformer = products => {
     });
 
     updatedProducts.push(getTransformer());
-
-    return updatedProducts;
   }
+
+  return updatedProducts;
 }
 
 const removeTransformers = products => {

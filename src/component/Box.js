@@ -1,3 +1,5 @@
+import React from 'react';
+
 const Box = props => {
   const { product, multiplier } = props;
 
