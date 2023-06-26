@@ -51,7 +51,7 @@ const Tesla = props => {
               addSelectedProducts={addSelectedProducts} 
             />
           </Grid>
-          <Grid item xs={selectedProducts.length < numberOfItemsToSwitchLayout ? 8 : 4}>
+          <Grid item xs={selectedProducts.length > numberOfItemsToSwitchLayout ? 4 : 8}>
             <PowerLayout 
               selectedProducts={selectedProducts}
             />
